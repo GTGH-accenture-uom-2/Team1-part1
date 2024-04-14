@@ -47,5 +47,36 @@ public class Main {
         System.out.println("Timeslots: " + center2.getTimeslots());
 
 
+        //Create an object type Doctor
+        Doctor doctor1 = new Doctor("166016416", "22112302167", "Γιώργος", "Παπαδόπουλος", LocalDate.of(1980, 1, 1), "gpapadopoulos@gmail.com");
+
+// Create an ArrayList to store Timeslot objects
+        ArrayList<Timeslot> timeslots = new ArrayList<>();
+
+// Create and add ten Timeslot objects to the ArrayList
+
+        timeslots.add(new Timeslot(14, 4, 2024, 10, 0, 30, 60, doctor1));
+        timeslots.add(new Timeslot(16, 4, 2024, 60, 11, 12, 10, doctor1));
+        timeslots.add(new Timeslot(17, 4, 2024, 60, 9, 10, 10, doctor1));
+        timeslots.add(new Timeslot(18, 4, 2024, 60, 8, 9, 10, doctor1));
+        timeslots.add(new Timeslot(19, 4, 2024, 60, 10, 11, 10, doctor1));
+        timeslots.add(new Timeslot(20, 4, 2024, 60, 12, 1, 10, doctor1));
+        timeslots.add(new Timeslot(21, 4, 2024, 60, 10, 11, 10, doctor1));
+        timeslots.add(new Timeslot(22, 4, 2024, 60, 11, 12, 10, doctor1));
+        timeslots.add(new Timeslot(23, 4, 2024, 60, 10, 11, 10, doctor1));
+        timeslots.add(new Timeslot(24, 4, 2024, 60, 10, 11, 10, doctor1));
+
+//print objects timeslots
+        for (Timeslot timeslot : timeslots) {
+            System.out.println("Date: " + timeslot.getDay() + "/" + timeslot.getMonth() + "/" + timeslot.getYear());
+            System.out.println("Start Time: " + timeslot.getHour() + ":" + timeslot.getStartMinute());
+            System.out.println("End Time: " + timeslot.getHour() + ":" + timeslot.getEndMinute());
+            System.out.println("Doctor: " + timeslot.getDoctor().getName() + " " + timeslot.getDoctor().getSurname());
+            System.out.println();
+        }
+
+
+
+    }
     }
 }
