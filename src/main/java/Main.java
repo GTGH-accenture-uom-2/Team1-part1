@@ -1,5 +1,6 @@
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
@@ -21,10 +22,30 @@ public class Main {
             insured.add(insured_people);
         }
         //print to check that's ok.
-        for (Insured insured_people : insured) {
+       /* for (Insured insured_people : insured) {
             System.out.println("Insured name: " + insured_people.getName() + "\n" +
                     "Birthday: " + insured_people.getBirthday());
-        }
+        }*/
+
+        //2 emboliastika kentra
+        VaccinationCenter center1 = new VaccinationCenter("VC001", "Farsalwn 1, Farsala",
+                Arrays.asList("9:00 AM", "10:00 AM", "11:00 AM"));
+
+        VaccinationCenter center2 = new VaccinationCenter("VC002", "Malgarwn 1, Malgara",
+                Arrays.asList("10:00 AM", "1:00 PM", "3:00 PM"));
+
+        // Display details of center1
+        System.out.println("VACCINATION CENTER 1:");
+        System.out.println("Code: " + center1.getCode());
+        System.out.println("Address: " + center1.getAddress());
+        System.out.println("Timeslots: " + center1.getTimeslots());
+
+        // Display details of center2
+        System.out.println("\nVACCINATION CENTER 2:");
+        System.out.println("Code: " + center2.getCode());
+        System.out.println("Address: " + center2.getAddress());
+        System.out.println("Timeslots: " + center2.getTimeslots());
+
 
     }
 }
