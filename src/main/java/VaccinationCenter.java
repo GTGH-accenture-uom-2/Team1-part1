@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class VaccinationCenter {
     private String code;
     private String address;  // Corrected instance variable name
-    ArrayList<Timeslot> timeslots;
+    private ArrayList<Timeslot> timeslots;
 
     // Constructor
     public VaccinationCenter(String code, String address, ArrayList<Timeslot> timeslots) {
