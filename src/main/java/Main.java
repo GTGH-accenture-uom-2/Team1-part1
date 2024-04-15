@@ -95,6 +95,29 @@ public class Main {
         for (int i = 0;i<8;i++){
             System.out.println(reservations.get(i).toString());
         }
+
+
+        for (int i = 0; i < 6; i++) {
+            Insured currentInsured = reservations.get(i).getInsured();
+
+            // Επιλογή του γιατρού που θα πραγματοποιήσει τον εμβολιασμό
+            Doctor currentDoctor = reservations.get(i).getTimeslot().getDoctor();
+            //Ημερομηνία εμβολιασμού
+            //Εδω για να βάλω συγκεκριμένη ημερομηνία εμβολιασμού χρησιμοποίησ την μέθοδο of της LocalDate
+            LocalDate currentVaccinationDate = LocalDate.of(2024, 4, 26);
+
+
+            //Ημερομηνία λήξης εμβολιασμού (εδώ δεν κατάλαβα τι θέλει να βάλουμε)
+            LocalDate currentExpirationDate = LocalDate.of(2024, 4, 26);
+
+            Vaccination currentVaccination = new Vaccination(currentInsured, currentDoctor, currentVaccinationDate, currentExpirationDate);
+
+            // Print τους εμβολιασμούς που έχουν γίνει
+
+            System.out.println("Ο εμβολιασμός του ασφαλισμένου " + currentInsured.getName() +
+                    " έχει πραγματοποιηθεί από τον γιατρό " + currentDoctor.getName() + ".");
+        }
+
         
 
 
