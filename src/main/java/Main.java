@@ -95,8 +95,7 @@ public class Main {
         for (int i = 0;i<8;i++){
             System.out.println(reservations.get(i).toString());
         }
-
-
+        
 
 
 //        // Display details of center1
