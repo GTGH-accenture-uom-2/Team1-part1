@@ -28,6 +28,11 @@ public class Timeslot {
     //Constructor No. 2
     public Timeslot(){}
 
+    //Method to assign a doctor to this timeslot
+    public void assignDoctor(Doctor dr){
+        this.doctor = dr;
+    }
+
     // Getters and setters
     public LocalDate getDay() {
         return day;
@@ -90,9 +95,9 @@ public class Timeslot {
     }
 
     public String toString() {
-        return ("\nDay: " + day + ", \nMonth: " + month + ", \nYear: " + year + ", " +
-                "\nHour: " + hour + ", \nMinutes: " + minutes + ", " +
-                "\nStartMinute: " + startMinute + ", \nEndMinute: " + endMinute);
+        return ("Day: " + day + ", Month: " + month + ", Year: " + year + ", " +
+                "Hour: " + hour + ", Minutes: " + minutes + ", " +
+                "StartMinute: " + startMinute + ", EndMinute: " + endMinute + "\n");
     }
 
 

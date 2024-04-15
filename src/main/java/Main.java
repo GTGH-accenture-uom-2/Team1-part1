@@ -1,5 +1,6 @@
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.TreeSet;
 
 public class Main {
     public static void main(String[] args) {
@@ -33,9 +34,7 @@ public class Main {
         // Create an ArrayList to store Timeslot objects
         ArrayList<Timeslot> timeslot1 = new ArrayList<>();
         ArrayList<Timeslot> timeslot2 = new ArrayList<>();
-        //2 emboliastika kentra
-        VaccinationCenter center1 = new VaccinationCenter("VC001", "Farsalwn 1, Farsala", timeslot1);
-        VaccinationCenter center2 = new VaccinationCenter("VC002", "Newn Malgarwn 3, Malgara", timeslot2);
+
         //Προσθήκη χρονικών θυρίδων(timeslots) στο Vaccination center no. 1,2
         for (int i = 0; i < 10; i++) {
             Timeslot t1= new Timeslot();
@@ -43,6 +42,12 @@ public class Main {
             timeslot1.add(t1);  //πέρασμα κάθε χρονικής θυρίδας στη Λίστα με τις χρονικές θυρίδες για το κέντρο 1
             timeslot2.add(t2); //αντίστοιχα και για το κέντρο 2
         }
+
+        //2 emboliastika kentra
+        VaccinationCenter center1 = new VaccinationCenter("VC001", "Farsalwn 1, Farsala", timeslot1);
+        VaccinationCenter center2 = new VaccinationCenter("VC002", "Newn Malgarwn 3, Malgara", timeslot2);
+
+        /*
         //Εκτύπωση των χρονικών θυρίδων(timeslots) στο Vaccination center no. 1,2
         System.out.println("Vaccination Center: " + center1.getAddress());
         int index=1;
@@ -55,6 +60,44 @@ public class Main {
             System.out.println("Timeslot no. : " + index++ + t);
             System.out.println("---------");
         }
+        */
+
+
+        //Create four doctors
+        Doctor dr1 = new Doctor("1", "1", "A", "A", LocalDate.of(1999,3,21), "mail1", new ArrayList<Timeslot>());
+        Doctor dr2 = new Doctor("2", "2", "B", "B", LocalDate.of(1998,3,21), "mail2", new ArrayList<Timeslot>());
+        Doctor dr3 = new Doctor("3", "3", "C", "c", LocalDate.of(1993,3,21), "mail3", new ArrayList<Timeslot>());
+        Doctor dr4 = new Doctor("4", "4", "D", "D", LocalDate.of(1992,3,21), "mail4", new ArrayList<Timeslot>());
+
+        //Assign 5 timeslots to each doctor
+        //dr1 and dr2 get the first 10 from the first vaccination center
+        //dr3 and dr4 get the second 10 from the second vaccination center
+        for(int i =0; i<5;i++){
+            dr1.addTimeslot(center1.getTimeslots().get(i));
+            dr2.addTimeslot(center1.getTimeslots().get(i+5));
+            dr3.addTimeslot(center2.getTimeslots().get(i));
+            dr4.addTimeslot(center2.getTimeslots().get(i+5));
+        }
+
+        //Print to check
+        System.out.println("Doctor: " + dr1.getName() +" " + dr1.getTimeslots().toString());
+        System.out.println("Doctor: " + dr2.getName() +" " + dr1.getTimeslots().toString());
+        System.out.println("Doctor: " + dr3.getName() +" " + dr1.getTimeslots().toString());
+        System.out.println("Doctor: " + dr4.getName() +" " + dr1.getTimeslots().toString());
+
+        //Create reservations for 8 insured people
+        ArrayList <Reservation> reservations = new ArrayList<>();
+        for (int i = 0;i<8;i++){
+            reservations.add(new Reservation(insured.get(i), timeslot1.get(i)));
+        }
+
+        //Print Reservations
+        for (int i = 0;i<8;i++){
+            System.out.println(reservations.get(i).toString());
+        }
+
+
+
 
 //        // Display details of center1
 //        System.out.println("VACCINATION CENTER 1:");

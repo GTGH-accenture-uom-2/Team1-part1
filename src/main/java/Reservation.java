@@ -25,5 +25,11 @@ public class Reservation {
     public void setTimeslot(Timeslot timeslot) {
         this.timeslot = timeslot;
     }
+
+
+    //Override toString
+    public String toString(){
+        return "Insured: " + getInsured().getName() + " Timeslot: " + getTimeslot().toString();
+    }
 }
 
