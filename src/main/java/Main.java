@@ -1,6 +1,5 @@
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
@@ -27,56 +26,72 @@ public class Main {
                     "Birthday: " + insured_people.getBirthday());
         }*/
 
+        /*  (β.) 2 εμβολιαστικά κέντρα με 10 χρονικές θυρίδες σε κάθε κέντρο  */
+        /* Δημιουργία αντικειμένων τύπου 'VaccinationCenter' +
+         * Δημιουργία Λίστας, η οποία περιέχει αντικέιμενα τύπου 'Timeslot' */
+
+        // Create an ArrayList to store Timeslot objects
+        ArrayList<Timeslot> timeslot1 = new ArrayList<>();
+        ArrayList<Timeslot> timeslot2 = new ArrayList<>();
         //2 emboliastika kentra
-        VaccinationCenter center1 = new VaccinationCenter("VC001", "Farsalwn 1, Farsala",
-                Arrays.asList("9:00 AM", "10:00 AM", "11:00 AM"));
-
-        VaccinationCenter center2 = new VaccinationCenter("VC002", "Malgarwn 1, Malgara",
-                Arrays.asList("10:00 AM", "1:00 PM", "3:00 PM"));
-
-        // Display details of center1
-        System.out.println("VACCINATION CENTER 1:");
-        System.out.println("Code: " + center1.getCode());
-        System.out.println("Address: " + center1.getAddress());
-        System.out.println("Timeslots: " + center1.getTimeslots());
-
-        // Display details of center2
-        System.out.println("\nVACCINATION CENTER 2:");
-        System.out.println("Code: " + center2.getCode());
-        System.out.println("Address: " + center2.getAddress());
-        System.out.println("Timeslots: " + center2.getTimeslots());
-
-
-        //Create an object type Doctor
-        Doctor doctor1 = new Doctor("166016416", "22112302167", "Γιώργος", "Παπαδόπουλος", LocalDate.of(1980, 1, 1), "gpapadopoulos@gmail.com");
-
-// Create an ArrayList to store Timeslot objects
-        ArrayList<Timeslot> timeslots = new ArrayList<>();
-
-// Create and add ten Timeslot objects to the ArrayList
-
-        timeslots.add(new Timeslot(14, 4, 2024, 10, 0, 30, 60, doctor1));
-        timeslots.add(new Timeslot(16, 4, 2024, 60, 11, 12, 10, doctor1));
-        timeslots.add(new Timeslot(17, 4, 2024, 60, 9, 10, 10, doctor1));
-        timeslots.add(new Timeslot(18, 4, 2024, 60, 8, 9, 10, doctor1));
-        timeslots.add(new Timeslot(19, 4, 2024, 60, 10, 11, 10, doctor1));
-        timeslots.add(new Timeslot(20, 4, 2024, 60, 12, 1, 10, doctor1));
-        timeslots.add(new Timeslot(21, 4, 2024, 60, 10, 11, 10, doctor1));
-        timeslots.add(new Timeslot(22, 4, 2024, 60, 11, 12, 10, doctor1));
-        timeslots.add(new Timeslot(23, 4, 2024, 60, 10, 11, 10, doctor1));
-        timeslots.add(new Timeslot(24, 4, 2024, 60, 10, 11, 10, doctor1));
-
-//print objects timeslots
-        for (Timeslot timeslot : timeslots) {
-            System.out.println("Date: " + timeslot.getDay() + "/" + timeslot.getMonth() + "/" + timeslot.getYear());
-            System.out.println("Start Time: " + timeslot.getHour() + ":" + timeslot.getStartMinute());
-            System.out.println("End Time: " + timeslot.getHour() + ":" + timeslot.getEndMinute());
-            System.out.println("Doctor: " + timeslot.getDoctor().getName() + " " + timeslot.getDoctor().getSurname());
-            System.out.println();
+        VaccinationCenter center1 = new VaccinationCenter("VC001", "Farsalwn 1, Farsala", timeslot1);
+        VaccinationCenter center2 = new VaccinationCenter("VC002", "Newn Malgarwn 3, Malgara", timeslot2);
+        //Προσθήκη χρονικών θυρίδων(timeslots) στο Vaccination center no. 1,2
+        for (int i = 0; i < 10; i++) {
+            Timeslot t1= new Timeslot();
+            Timeslot t2= new Timeslot();
+            timeslot1.add(t1);  //πέρασμα κάθε χρονικής θυρίδας στη Λίστα με τις χρονικές θυρίδες για το κέντρο 1
+            timeslot2.add(t2); //αντίστοιχα και για το κέντρο 2
+        }
+        //Εκτύπωση των χρονικών θυρίδων(timeslots) στο Vaccination center no. 1,2
+        System.out.println("Vaccination Center: " + center1.getAddress());
+        int index=1;
+        for (Timeslot t : center1.getTimeslots()) {
+            System.out.println("Timeslot no. : " + index++ + t);
+            System.out.println("---------");
+        }
+        System.out.println("Vaccination Center: " + center2.getAddress());
+        for (Timeslot t : center2.getTimeslots()) {
+            System.out.println("Timeslot no. : " + index++ + t);
+            System.out.println("---------");
         }
 
+//        // Display details of center1
+//        System.out.println("VACCINATION CENTER 1:");
+//        System.out.println("Code: " + center1.getCode());
+//        System.out.println("Address: " + center1.getAddress());
+//        System.out.println("Timeslots: " + center1.getTimeslots());
+//
+//        // Display details of center2
+//        System.out.println("\nVACCINATION CENTER 2:");
+//        System.out.println("Code: " + center2.getCode());
+//        System.out.println("Address: " + center2.getAddress());
+//        System.out.println("Timeslots: " + center2.getTimeslots());
 
+        //Create an object type Doctor
+      //  Doctor doctor1 = new Doctor("166016416", "22112302167", "Γιώργος", "Παπαδόπουλος", LocalDate.of(1980, 1, 1), "gpapadopoulos@gmail.com");
 
-    }
+// Create and add ten Timeslot objects to the ArrayList
+//
+//        timeslots.add(new Timeslot(14, 4, 2024, 10, 0, 30, 60, doctor1));
+//        timeslots.add(new Timeslot(16, 4, 2024, 60, 11, 12, 10, doctor1));
+//        timeslots.add(new Timeslot(17, 4, 2024, 60, 9, 10, 10, doctor1));
+//        timeslots.add(new Timeslot(18, 4, 2024, 60, 8, 9, 10, doctor1));
+//        timeslots.add(new Timeslot(19, 4, 2024, 60, 10, 11, 10, doctor1));
+//        timeslots.add(new Timeslot(20, 4, 2024, 60, 12, 1, 10, doctor1));
+//        timeslots.add(new Timeslot(21, 4, 2024, 60, 10, 11, 10, doctor1));
+//        timeslots.add(new Timeslot(22, 4, 2024, 60, 11, 12, 10, doctor1));
+//        timeslots.add(new Timeslot(23, 4, 2024, 60, 10, 11, 10, doctor1));
+//        timeslots.add(new Timeslot(24, 4, 2024, 60, 10, 11, 10, doctor1));
+//
+////print objects timeslots
+//        for (Timeslot timeslot : timeslots) {
+//            System.out.println("Date: " + timeslot.getDay() + "/" + timeslot.getMonth() + "/" + timeslot.getYear());
+//            System.out.println("Start Time: " + timeslot.getHour() + ":" + timeslot.getStartMinute());
+//            System.out.println("End Time: " + timeslot.getHour() + ":" + timeslot.getEndMinute());
+//      //      System.out.println("Doctor: " + timeslot.getDoctor().getName() + " " + timeslot.getDoctor().getSurname());
+//            System.out.println();
+//        }
+
     }
 }

@@ -1,12 +1,14 @@
-import java.util.List;
+/* Κλάση: Για το εμβολιαστικό κέντρο  */
+
+import java.util.ArrayList;
 
 public class VaccinationCenter {
     private String code;
     private String address;  // Corrected instance variable name
-    private List<String> timeslots;
+    ArrayList<Timeslot> timeslots;
 
     // Constructor
-    public VaccinationCenter(String code, String address, List<String> timeslots) {
+    public VaccinationCenter(String code, String address, ArrayList<Timeslot> timeslots) {
         this.code = code;
         this.address = address;
         this.timeslots = timeslots;
@@ -21,7 +23,7 @@ public class VaccinationCenter {
         return address;
     }
 
-    public List<String> getTimeslots() {
+    public ArrayList<Timeslot> getTimeslots() {
         return timeslots;
     }
 
@@ -34,7 +36,9 @@ public class VaccinationCenter {
         this.address = address;
     }
 
-    public void setTimeslots(List<String> timeslots) {
+    public void setTimeslots(ArrayList<Timeslot> timeslots) {
         this.timeslots = timeslots;
     }
+
+
 }
