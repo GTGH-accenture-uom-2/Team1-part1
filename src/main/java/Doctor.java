@@ -1,16 +1,15 @@
-/* Κλάση: για τον Γιατρό  */
-/* την διαχειριζόμαστε ως Υπο-κλάση της Υπερ-κλάσης 'Insured' */
+/* Class: Doctor */
+/* as Sub-class of Superclass: 'Insured' */
 
-import java.sql.Time;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class Doctor extends Insured{
-    /* δηλώνω ΜΟΝΟ τα πεδία που ΔΕΝ κληρονομώ */
+    /* we declare ONLY fields that we do not inherit */
     private ArrayList<Timeslot> timeslots;
 
     public Doctor(String afm, String amka, String name, String surname, LocalDate birthday, String email, ArrayList<Timeslot> timeslots) {
-        //πρέπει να καλέσουμε τον κατασκευαστή της ΥΠΕΡΚΛΑΣΗΣ ως 1η εντολή:
+        //we have to call first the constructor of the Superclass:
         super(afm, amka, name, surname, birthday, email);
         this.timeslots = timeslots;
     }
@@ -20,7 +19,7 @@ public class Doctor extends Insured{
         timeslot.assignDoctor(this);
     }
 
-    //Setter and Getter
+    //Getter and Setter
 
     public ArrayList<Timeslot> getTimeslots() {
         return timeslots;

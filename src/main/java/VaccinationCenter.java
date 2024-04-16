@@ -1,4 +1,4 @@
-/* Κλάση: Για το εμβολιαστικό κέντρο  */
+/* /* Class: Vaccination Center */
 
 import java.util.ArrayList;
 

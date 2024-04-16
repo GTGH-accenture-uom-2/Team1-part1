@@ -1,6 +1,6 @@
-/* Κλάση: για τον ασφαλισμένο πολίτη ή γιατρό */
-/* Διατηρεί ορισμένα κοινά πεδία με την κλάση 'Doctor', γι'αυτό και ορίζουμε την παρούσα κλάση ως Γονική/Υπερ-κλάση
-* και ως υποκλάση την 'Doctor', η οποία θα κληρονομεί τα κοινά στοιχεία απο την Υπερκλάση. */
+/* Class: for Insured citizen or Doctor */
+/* It shares some common fields with the 'Doctor' class, so we make this class a Parent/Superclass
+* and as a subclass 'Doctor', which will inherit the common elements from the Superclass. */
 import java.time.LocalDate;
 
 public class Insured {
@@ -22,19 +22,60 @@ public class Insured {
         this.email = email;
     }
 
-    //2. Constructor no. 2(overload - use for main class)
+    //2. Constructor no. 2 (overload - use for main class)
     public Insured(String name, LocalDate birthday){
         this.name = name;
         this.birthday = birthday;
     }
 
+
+    //Getters and Setters
+
+    public String getAfm() {
+        return afm;
+    }
+
+    public void setAfm(String afm) {
+        this.afm = afm;
+    }
+
+    public String getAmka() {
+        return amka;
+    }
+
+    public void setAmka(String amka) {
+        this.amka = amka;
+    }
+
     public String getName() {
         return name;
     }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getSurname() {
+        return surname;
+    }
+
+    public void setSurname(String surname) {
+        this.surname = surname;
+    }
+
     public LocalDate getBirthday() {
         return birthday;
     }
 
+    public void setBirthday(LocalDate birthday) {
+        this.birthday = birthday;
+    }
 
+    public String getEmail() {
+        return email;
+    }
 
+    public void setEmail(String email) {
+        this.email = email;
+    }
 }
