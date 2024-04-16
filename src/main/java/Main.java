@@ -1,54 +1,50 @@
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.TreeSet;
+//import java.util.TreeSet;
 
 public class Main {
     public static void main(String[] args) {
 
-        /*  Δημιουργία αντικειμένων στη main (με ΤΥΧΑΙΕΣ τιμές στις ιδιότητές τους):  */
-
-        /*  (α.) 15 ασφαλισμένους πολίτες: ηλικιών 10-90 ετών => σε ΛΙΣΤΑ  */
-        /* Δημιουργία ενός ArrayList που περιέχει αντικείμενα τύπου 'Insured' */
+    /*  Create objects on Main  */
+        /*  (a.) 15 insured citizens: age {10-90} => in a List  */
+        /* Create an ArrayList that contains Objects type 'Insured' */
         ArrayList<Insured> insured = new ArrayList<>();
-        //βάσει ονόματος του κάθε ασφαλισμένου πολίτη:
+        //keep citizens' name in a 'String' table
         String[] insured_name = {"Γιάννης", "Ελένη", "Αντωνία", "Λίνα", "Θανάσης", "Μαρία", "Αρσένης", "Παυλίνα",
                 "Όλγα", "Στέλιος", "Δήμητρα", "Παντελής", "Μιχάλης", "Κατερίνα", "Ανθή"};
-        //καθώς και την ημερομηνία γέννησής του - να περιλαμβάνονται ηλικίες 10-90 ετών (γεννηθείς του 1934 έως 2014)
-        //υλοποίηση με χρήση της 'LocalDate': πιο σύγχρονη μέθοδος και προσφέρει βελτιωμένη λειτουργικότητα
+        //keep citizens' birthday (1934-2014) using 'LocalDate' table
+                                                    // (LocalDate: modern method - offers improved functionality)
         LocalDate[] dates = new LocalDate[15];
         for (int i = 0; i < 15; i++) {
             dates[i] = LocalDate.of(1935 + (i * 5), 1, i + 1);
             Insured insured_people = new Insured(insured_name[i], dates[i]);
             insured.add(insured_people);
         }
-        //print to check that's ok.
+        //print to check that's ok
        /* for (Insured insured_people : insured) {
             System.out.println("Insured name: " + insured_people.getName() + "\n" +
                     "Birthday: " + insured_people.getBirthday());
         }*/
 
-        /*  (β.) 2 εμβολιαστικά κέντρα με 10 χρονικές θυρίδες σε κάθε κέντρο  */
-        /* Δημιουργία αντικειμένων τύπου 'VaccinationCenter' +
-         * Δημιουργία Λίστας, η οποία περιέχει αντικέιμενα τύπου 'Timeslot' */
-
-        // Create an ArrayList to store Timeslot objects
+        /*  (b.) 2 vaccination center with 10 timeslots for each center */
+        /* Create an ArrayList to store Timeslot objects */
         ArrayList<Timeslot> timeslot1 = new ArrayList<>();
         ArrayList<Timeslot> timeslot2 = new ArrayList<>();
 
-        //Προσθήκη χρονικών θυρίδων(timeslots) στο Vaccination center no. 1,2
+        //Add timeslots to Vaccination center no. 1,2
         for (int i = 0; i < 10; i++) {
             Timeslot t1= new Timeslot();
             Timeslot t2= new Timeslot();
-            timeslot1.add(t1);  //πέρασμα κάθε χρονικής θυρίδας στη Λίστα με τις χρονικές θυρίδες για το κέντρο 1
-            timeslot2.add(t2); //αντίστοιχα και για το κέντρο 2
+            timeslot1.add(t1);  //pass each timeslot to the Timeslots List for the 1st center
+            timeslot2.add(t2); //respectively, for the 2nd center
         }
 
-        //2 emboliastika kentra
+        //Create Objects type 'VaccinationCenter'
         VaccinationCenter center1 = new VaccinationCenter("VC001", "Farsalwn 1, Farsala", timeslot1);
         VaccinationCenter center2 = new VaccinationCenter("VC002", "Newn Malgarwn 3, Malgara", timeslot2);
 
         /*
-        //Εκτύπωση των χρονικών θυρίδων(timeslots) στο Vaccination center no. 1,2
+        //Print timeslots to Vaccination center no. 1,2
         System.out.println("Vaccination Center: " + center1.getAddress());
         int index=1;
         for (Timeslot t : center1.getTimeslots()) {
@@ -61,7 +57,6 @@ public class Main {
             System.out.println("---------");
         }
         */
-
 
         //Create four doctors
         Doctor dr1 = new Doctor("1", "1", "A", "A", LocalDate.of(1999,3,21), "mail1", new ArrayList<Timeslot>());

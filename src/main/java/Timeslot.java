@@ -1,4 +1,4 @@
-/* Κλάση: Για τη χρονική θυρίδα εμβολιασμού  */
+/* Class: Timeslot */
 
 import java.time.LocalDate;
 

@@ -1,3 +1,5 @@
+/* Class: Reservation */
+
 public class Reservation {
     private Insured insured;
     private Timeslot timeslot;

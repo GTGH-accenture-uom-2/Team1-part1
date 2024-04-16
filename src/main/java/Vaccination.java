@@ -1,3 +1,5 @@
+/* Class: Vaccination */
+
 import java.time.LocalDate;
 
 public class Vaccination {
