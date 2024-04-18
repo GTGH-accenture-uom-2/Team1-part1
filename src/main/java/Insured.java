@@ -1,6 +1,7 @@
 /* Class: for Insured citizen or Doctor */
 /* It shares some common fields with the 'Doctor' class, so we make this class a Parent/Superclass
 * and as a subclass 'Doctor', which will inherit the common elements from the Superclass. */
+
 import java.time.LocalDate;
 
 public class Insured {
@@ -11,6 +12,7 @@ public class Insured {
     private String surname;
     private LocalDate birthday;
     private String email;
+    //private Boolean hasReservation;  //boolean variable to show if a citizen has a reservation for vaccination
 
     //Constructor no. 1
     public Insured(String afm, String amka, String name, String surname, LocalDate birthday, String email) {
@@ -78,4 +80,9 @@ public class Insured {
     public void setEmail(String email) {
         this.email = email;
     }
+
+    public Boolean hasReservation(){
+        return false;
+    }
+
 }
