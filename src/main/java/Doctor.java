@@ -8,7 +8,8 @@ public class Doctor extends Insured{
     /* we declare ONLY fields that we do not inherit */
     private ArrayList<Timeslot> timeslots;
 
-    public Doctor(String afm, String amka, String name, String surname, LocalDate birthday, String email, ArrayList<Timeslot> timeslots) {
+    public Doctor(String afm, String amka, String name, String surname, LocalDate birthday, String email
+            , ArrayList<Timeslot> timeslots) {
         //we have to call first the constructor of the Superclass:
         super(afm, amka, name, surname, birthday, email);
         this.timeslots = timeslots;

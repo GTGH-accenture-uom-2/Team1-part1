@@ -1,9 +1,10 @@
+import java.io.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
 //import java.util.TreeSet;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 
     /*  Create objects on Main  */
         /*  (a.) 15 insured citizens: age {10-90} => in a List  */
@@ -113,7 +114,21 @@ public class Main {
                     " έχει πραγματοποιηθεί από τον γιατρό " + currentDoctor.getName() + ".");
         }
 
-        
+ //---------------------------------------------------------------------------------------------------------------------
+
+        //Files:
+
+      //  File directory = new File("C:/Users/Antonia/Desktop/Team1-part1/vaccination-results.txt");
+
+        /*  : Write to file  */
+        //μπορούμε να γράψουμε πράγματα μέσα σε ενα αρχειο
+        //System.lineSeparator(): είναι το λεγόμενο 'enter'
+        //με το 'append': προσθέτουμε κι'άλλα πράγματα
+//        BufferedWriter writer = new BufferedWriter(new FileWriter("vaccination-results.txt"));
+//        writer.write("Insured information:\n"); //ό,τι γράψω απο εδώ και κάτω μπαίνει μέσα στο txt file
+//        writer.append(System.lineSeparator() + "Hello Nikos");
+//        writer.close();
+
 
 
 //        // Display details of center1
