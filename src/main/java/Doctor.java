@@ -7,6 +7,7 @@ import java.util.ArrayList;
 public class Doctor extends Insured{
     /* we declare ONLY fields that we do not inherit */
     private ArrayList<Timeslot> timeslots;
+    private ArrayList<Vaccination> vaccinations=new ArrayList<>();
 
     public Doctor(String afm, String amka, String name, String surname, LocalDate birthday, String email
             , ArrayList<Timeslot> timeslots) {
@@ -19,11 +20,23 @@ public class Doctor extends Insured{
         timeslots.add(timeslot);
         timeslot.assignDoctor(this);
     }
+    //Method to add/assign new vaccinations to a doctor
+    public void addVaccination(Vaccination vaccination){
+        vaccinations.add(vaccination);
+    }
 
     //Getter and Setter
 
     public ArrayList<Timeslot> getTimeslots() {
         return timeslots;
+    }
+
+    public ArrayList<Vaccination> getVaccinations() {
+        return vaccinations;
+    }
+
+    public void setVaccinations(ArrayList<Vaccination> vaccinations) {
+        this.vaccinations = vaccinations;
     }
 
     public void setTimeslots(ArrayList<Timeslot> timeslots) {

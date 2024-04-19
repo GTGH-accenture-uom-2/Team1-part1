@@ -17,6 +17,10 @@ public class Vaccination {
         this.expirationDate = expirationDate;
     }
 
+    //Method to assign a doctor to this vaccination
+    public void assignDoctor(Doctor dr){
+        this.doctor = dr;
+    }
 
     //Getters and setters
     public Insured getInsured() {return insured;}
@@ -34,4 +38,12 @@ public class Vaccination {
     public LocalDate getExpirationDate() {return expirationDate;}
 
     public void setExpirationDate(LocalDate expirationDate) {this.expirationDate = expirationDate;}
+
+    @Override
+    public String toString() {
+        return "Vaccination{" +
+                "vaccinationDate=" + vaccinationDate +
+                ", insured=" + insured.getName() +
+                '}';
+    }
 }
